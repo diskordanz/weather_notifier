@@ -8,4 +8,4 @@ Environment variables with default values:
     LONGITUDE      = 27.5615   
     SYNC_INTERVAL  = 5s
 
-    API_KEY and API_URL does not have a default value and must be provided.     
+    API_KEY and API_URL does not have a default value and must be provided.
