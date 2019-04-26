@@ -1,0 +1,18 @@
+package: github.com/diskordanz/weather_maker
+import:
+- package: github.com/pkg/errors
+  version: ^0.8.1
+- package: github.com/sirupsen/logrus
+  version: ^1.4.0
+- package: github.com/xedinaska/int-weather-sdk
+  subpackages:
+  - api
+  - config
+  - request
+  - server
+- package: github.com/shawntoffel/darksky
+  version: v1.3.1
+- package: github.com/stretchr/testify
+  version: v1.3.0
+  subpackages:
+  - suite
