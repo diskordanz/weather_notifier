@@ -1,18 +1,14 @@
-package: github.com/diskordanz/weather_maker
+package: github.com/diskordanz/weather_notifier
 import:
+- package: github.com/caarlos0/env
+  version: v5.0.0
+- package: github.com/diskordanz/darksky
+  subpackages:
+  - integration
 - package: github.com/pkg/errors
-  version: ^0.8.1
+  version: v0.8.1
 - package: github.com/sirupsen/logrus
-  version: ^1.4.0
+  version: v1.4.1
 - package: github.com/xedinaska/int-weather-sdk
   subpackages:
   - api
-  - config
-  - request
-  - server
-- package: github.com/shawntoffel/darksky
-  version: v1.3.1
-- package: github.com/stretchr/testify
-  version: v1.3.0
-  subpackages:
-  - suite
