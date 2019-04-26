@@ -6,7 +6,6 @@ import (
 
 	"github.com/diskordanz/darksky/integration"
 	"github.com/diskordanz/weather_notifier/config"
-	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 	"github.com/xedinaska/int-weather-sdk/api"
 )
@@ -23,10 +22,10 @@ func StartSendingWeather(ctx context.Context, darksky *integration.Darksky, logg
 			Longitude: cfg.Longitude,
 		})
 		if err != nil {
-			logger.Fatal(err)
+			logger.Errorf("failed to get weather from api darksky: %v", err.Error())
 		}
 		if _, err := darksky.RequestClient.Post(ctx, urlPath, &forecast, nil); err != nil {
-			errors.Wrap(err, "failed to send forecast weather")
+			logger.Errorf("failed to send forecast weather: %v", err.Error())
 		}
 	}
 }

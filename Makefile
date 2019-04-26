@@ -16,11 +16,8 @@ deps:
 	glide install
 
 lint: 
-	@for p in $(PACKAGE_LIST); do \
-		echo "==> Lint $$p ..."; \
-		golint $(TOP_PACKAGE_DIR)/$$p; \
-	done
-
+	golint $$(go list ./... | grep -v /vendor/)
+	
 run:
 	API_URL=http://localhost:8002 \
 	API_KEY=b04ad8db6f75cbd1a02e6e4c8e1e1272 \

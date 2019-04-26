@@ -26,7 +26,7 @@ func main() {
 
 	cfg, err := config.Load()
 	if err != nil {
-		logger.Fatal(err.Error())
+		logger.Errorf("failed to load config: %v", err.Error())
 	}
 
 	ctx := context.Background()
